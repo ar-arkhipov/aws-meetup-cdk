@@ -24,5 +24,13 @@ export default class MyTables extends cdk.Construct {
       },
       removalPolicy: cdk.RemovalPolicy.DESTROY
     });
+    
+    this.list.films = new dynamodb.Table(this, 'films-table', {
+      partitionKey: {
+        name: "id",
+        type: dynamodb.AttributeType.STRING
+      },
+      removalPolicy: cdk.RemovalPolicy.DESTROY
+    });
   }
 }
