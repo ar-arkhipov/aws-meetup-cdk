@@ -8,7 +8,9 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "diff:prod": "npx cdk synth && npx cdk diff -a cdk.out/assembly-PipelineStack-prod",
+    "deploy:prod": "npx cdk synth && npx cdk deploy -a cdk.out/assembly-PipelineStack-prod"
   },
   "devDependencies": {
     "@aws-cdk/assert": "1.111.0",
